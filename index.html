@@ -1,4 +1,4 @@
-} else if (getAutoEnhance() && !getApiKey()) {
+else if (getAutoEnhance() && !getApiKey()) {
       errorBanner.textContent = 'Configure sua API key do Gemini em Configurações para usar o pós-processamento automático.';
       errorBanner.classList.add('active');
     }
@@ -51,17 +51,3 @@
         {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'x-goog-api-key': apiKey
-          },
-          body: JSON.stringify({
-            contents: [{
-              parts: [
-                { text: ENHANCEMENT_PROMPT },
-                { inline_data: { mime_type: 'image/jpeg', data: base64Image } }
-              ]
-            }]
-          })
-        }
-      );
-        
